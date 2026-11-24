@@ -1,36 +1,36 @@
-## Ziel / Issue
+## Goal / Issue
 
-<!-- Was wird erreicht? Verlinkung: Closes #<nr> -->
+<!-- What does this PR achieve? Link the issue: Closes #<nr> -->
 
-## Änderungen
+## Changes
 
-<!-- Bei großen PRs nach Modulen gruppieren und eine Review-Reihenfolge angeben. -->
+<!-- For large PRs, group changes by module and state a review order. -->
 
-## Security-Bewertung
+## Security Assessment
 
-<!-- Risiken, Validierung, AuthN/AuthZ, Secrets, Dependencies. -->
+<!-- Risks, validation, AuthN/AuthZ, secrets, dependencies. -->
 
-## Compliance-Mapping
+## Compliance Mapping
 
-<!-- ISO 27001 / NIS2 / BSI / TISAX, falls relevant. -->
+<!-- ISO 27001 / NIS2 / BSI / TISAX, if relevant. -->
 
 ## Tests
 
-<!-- Welche Tests wurden ergänzt (inkl. Security- und Fehlerpfade)? Nur verifizierte Ergebnisse angeben. -->
+<!-- Which tests were added (including security and error paths)? Report verified results only. -->
 
 ## Breaking Changes
 
-<!-- Keine / Beschreibung -->
+<!-- None / description -->
 
-## i18n-Auswirkung
+## i18n Impact
 
-<!-- Neue oder geänderte UI-Texte (DE/EN)? -->
+<!-- New or changed UI texts (DE/EN)? -->
 
-## Version-Bump
+## Version Bump
 
-<!-- Level (MAJOR/MINOR/PATCH/keiner), Begründung, betroffene Dateien. -->
+<!-- Level (MAJOR/MINOR/PATCH/none), rationale, affected files. -->
 
-## Review-Checkliste für Manu
+## Review Checklist
 
 - [ ] 
 - [ ] 
@@ -38,8 +38,8 @@
 
 ## Rollback
 
-<!-- Wie wird die Änderung zurückgenommen? -->
+<!-- How is this change reverted? -->
 
 ---
 
-**Merge-Hinweis:** Merge ausschließlich per **Squash** im GitHub-Web-UI (signierter Commit auf `main`). Kein lokaler Merge per CLI. Siehe `docs/security/merge-policy.md`.
+**Merge note:** Merge exclusively as a **squash merge** in the GitHub web UI (signed commit on `main`). No local merge via CLI. See `docs/security/merge-policy.md`.
