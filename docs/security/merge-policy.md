@@ -17,7 +17,7 @@ This policy describes how changes reach `main` and how their integrity remains v
 
 ## Commit Signing Decision
 
-Feature branches do not require signed commits. Commits on feature branches are created through the GitHub API (connector) and are unsigned. The squash merge in the web UI creates a commit on `main` that is signed by GitHub (status "Verified", committer `GitHub`).
+Feature branches do not require signed commits. Contributors may sign their commits (GPG, SSH or S/MIME), but unsigned commits are accepted on feature branches, regardless of how they were created (local Git, web UI, API or tooling). The squash merge in the web UI creates a commit on `main` that is signed by GitHub (status "Verified", committer `GitHub`).
 
 Rationale: Private signing keys must not be shared with third parties or connectors. The signature on `main` shows that the commit was created through GitHub.
 
@@ -39,5 +39,5 @@ Mappings to NIS2, BSI IT-Grundschutz and TISAX will be added when the control ca
 
 ## Verification
 
-- After the first merge, verify that the squash commit on `main` is shown as "Verified".
+- After every merge, verify that the squash commit on `main` is shown as "Verified".
 - Review the ruleset configuration against this policy regularly (for example quarterly).
