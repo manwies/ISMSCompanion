@@ -53,7 +53,7 @@ We follow coordinated disclosure principles:
 ## Security Best Practices for Contributors
 
 - Enable 2FA on your GitHub account
-- Sign commits with GPG keys
+- Signed commits are required on `main` and are created by the squash merge in the GitHub web UI; signing local commits is recommended but not required (see `docs/security/merge-policy.md`)
 - Follow secure coding guidelines in CONTRIBUTING.md
 - Run pre-commit hooks before submitting PRs
 
