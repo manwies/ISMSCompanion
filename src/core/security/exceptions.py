@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """Security-specific exceptions for ISMSCompanion.
 
 Custom exceptions improve error handling and security logging by providing
