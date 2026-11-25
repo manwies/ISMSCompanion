@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """Cryptographic configuration and security constants.
 
 This module centralizes all security-critical constants following OWASP, NIST,
