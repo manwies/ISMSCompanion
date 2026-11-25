@@ -68,7 +68,7 @@ This project welcomes contributions from security professionals, developers, and
 
 ## License
 
-This project is licensed under the GNU General Public License v3.0 (GPL-3.0). See the [LICENSE](LICENSE) file for details.
+This project is licensed under the GNU Affero General Public License v3.0 only (AGPL-3.0-only). If you run a modified version as a network service, you must offer the complete source code of that version to the users of the service (AGPL section 13). See the [LICENSE](LICENSE) file for details.
 
 ## Contact
 
