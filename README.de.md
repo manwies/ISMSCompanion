@@ -64,7 +64,7 @@ _Hinweis: Dieses Projekt wird in Teilen unter Nutzung von KI entwickelt, wobei d
 
 ## Mitwirkende
 
-Dieses Projekt begrüßt Beiträge von Sicherheitsfachkräften, Entwicklern und Compliance-Experten. Detaillierte Beitragsleitlinien werden bereitgestellt, sobald das Projekt voranschreitet.
+ISMSCompanion nimmt derzeit keine externen Code-Beiträge an. Fehlerberichte, Ideen und Sicherheitsmeldungen sind über den Issue Tracker willkommen. Details stehen in [CONTRIBUTING.de.md](CONTRIBUTING.de.md).
 
 ## Lizenz
 

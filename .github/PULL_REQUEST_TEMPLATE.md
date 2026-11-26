@@ -1,3 +1,5 @@
+<!-- ISMSCompanion does not accept external code contributions (see CONTRIBUTING.md). Pull requests from third parties will be closed without a merge. -->
+
 ## Goal / Issue
 
 <!-- What does this PR achieve? Link the issue: Closes #<nr> -->
