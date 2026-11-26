@@ -6,15 +6,20 @@ on:
   push:
     branches: [main]
 
+# Least privilege: jobs only need to read the repository
 permissions:
   contents: read
-  security-events: write
-  pull-requests: write
+
+# Cancel superseded runs on the same PR/branch
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
   format-lint:
     name: Format & Lint Check
     runs-on: ubuntu-latest
+    timeout-minutes: 15
 
     steps:
       - name: Checkout Code
@@ -53,6 +58,7 @@ jobs:
   security-scan:
     name: Security Scan (Bandit)
     runs-on: ubuntu-latest
+    timeout-minutes: 10
 
     steps:
       - name: Checkout Code
