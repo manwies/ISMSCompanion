@@ -4,6 +4,19 @@ All notable changes to this project are documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Added
+
+- Smoke tests for the core security module (`crypto_config`, `exceptions`) and a version consistency test.
+- CI job running `pytest` with coverage on pull requests and pushes to `main`.
+- `pytest-cov` as development dependency.
+
+### Changed
+
+- CI workflow runs with read-only `contents` permission, cancels superseded pull request runs and has job timeouts.
+- `mypy` and Bandit (medium severity and above) now fail the CI run instead of being ignored.
+
 ## [0.2.0] - 2026-11-25
 
 ### Added

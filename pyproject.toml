@@ -33,6 +33,7 @@ build = [
 # Development Tools
 dev = [
     "pytest>=8.0.0",         # Tests
+    "pytest-cov>=7.1.0",     # Coverage reporting (MIT)
     "black>=24.0.0",         # Code Formatting
     "ruff>=0.6.0",           # Linting
     "mypy>=1.10.0",          # Type Checking
