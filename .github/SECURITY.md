@@ -50,12 +50,16 @@ We follow coordinated disclosure principles:
 - We will credit reporters unless anonymity is requested
 - Early disclosure may occur for actively exploited vulnerabilities
 
-## Security Best Practices for Contributors
+## Security Practices
 
-- Enable 2FA on your GitHub account
+ISMSCompanion currently does not accept external code contributions (see [CONTRIBUTING.md](../CONTRIBUTING.md)). Security reports are welcome and are handled as described above. Please describe the issue in words and do not send patches.
+
+The maintainer follows these practices:
+
+- 2FA is enabled on the maintainer's GitHub account
 - Signed commits are required on `main` and are created by the squash merge in the GitHub web UI; signing local commits is recommended but not required (see `docs/security/merge-policy.md`)
-- Follow secure coding guidelines in CONTRIBUTING.md
-- Run pre-commit hooks before submitting PRs
+- Secure coding rules and the definition of done are documented in [CONTRIBUTING.md](../CONTRIBUTING.md)
+- Pre-commit hooks are run before a pull request is opened
 
 ## Safe Harbor
 
