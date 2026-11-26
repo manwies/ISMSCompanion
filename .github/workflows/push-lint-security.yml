@@ -1,19 +1,19 @@
 name: Security & Lint Check
 
+# Runs on pull requests only. Branch protection on main must require these
+# checks and an up-to-date branch, so the PR run covers the merge result.
 on:
   pull_request:
-    branches: [main]
-  push:
     branches: [main]
 
 # Least privilege: jobs only need to read the repository
 permissions:
   contents: read
 
-# Cancel superseded runs on the same PR/branch
+# Cancel superseded runs on the same PR
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+  cancel-in-progress: true
 
 jobs:
   format-lint:
