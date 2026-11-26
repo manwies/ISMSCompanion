@@ -53,7 +53,7 @@ jobs:
         run: ruff check . --output-format=github
 
       - name: mypy Type Check
-        run: mypy src/ || true
+        run: mypy src/
 
   security-scan:
     name: Security Scan (Bandit)
@@ -76,7 +76,8 @@ jobs:
         run: pip install bandit[toml]
 
       - name: Run Bandit Security Scan
-        run: bandit -r src/ -f json -o bandit-report.json || true
+        # Fail on medium severity and above; report is uploaded in any case
+        run: bandit -r src/ -ll -f json -o bandit-report.json
 
       - name: Upload Bandit Report
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
