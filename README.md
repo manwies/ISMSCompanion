@@ -64,7 +64,7 @@ _Note: Some code components are developed with AI assistance, with all AI-genera
 
 ## Contributing
 
-This project welcomes contributions from security professionals, developers, and compliance experts. Detailed contribution guidelines will be provided as the project progresses.
+ISMSCompanion currently does not accept external code contributions. Bug reports, ideas and security reports are welcome via the issue tracker. For details, see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## License
 
