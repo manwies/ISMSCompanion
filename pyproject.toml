@@ -41,8 +41,7 @@ build = [
 dev = [
     "pytest>=9.0.3",         # Tests (CVE-2025-71176 fixed in 9.0.3)
     "pytest-cov>=7.1.0",     # Coverage reporting (MIT)
-    "black>=24.0.0",         # Code Formatting
-    "ruff>=0.6.0",           # Linting
+    "ruff>=0.6.0",           # Linting and formatting
     "mypy>=1.10.0",          # Type Checking
 ]
 
@@ -63,10 +62,6 @@ where = ["src"]
 include = ["ismscompanion*"]
 
 # Tool Configurations
-[tool.black]
-line-length = 88
-target-version = ['py311']
-
 [tool.ruff]
 line-length = 88
 target-version = "py311"
