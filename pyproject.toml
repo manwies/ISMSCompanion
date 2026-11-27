@@ -12,6 +12,13 @@ authors = [
 ]
 license = "AGPL-3.0-only"
 requires-python = ">=3.11.4" # Security: PEP 706 (tarfile) - mitigates CVE-2025-8869 and related vulnerabilities
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+]
 
 # Core Backend Dependencies (für Web + Sidecar)
 dependencies = [
