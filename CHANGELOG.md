@@ -6,10 +6,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+### Added
+
+- Python support policy in `docs/python-support-policy.md`.
+
 ### Changed
 
 - CI runs `pytest` with coverage on pull requests.
 - `mypy` and Bandit (medium severity and above) now fail the CI run instead of being ignored.
+- CI runs the tests on Python 3.11 to 3.14 and on 3.15 as a non-blocking experimental job. Lint, type check, dependency audit and Bandit run on Python 3.13.
+- Supported Python versions are declared as package classifiers.
+- Renovate no longer proposes Python minor or major upgrades.
 
 ## [0.2.0] - 2026-11-25
 
