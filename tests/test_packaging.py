@@ -24,9 +24,7 @@ def test_every_module_directory_has_init() -> None:
 
 def test_setuptools_discovers_all_subpackages() -> None:
     source_root = PACKAGE_ROOT.parent
-    discovered = set(
-        find_packages(where=str(source_root), include=["ismscompanion*"])
-    )
+    discovered = set(find_packages(where=str(source_root), include=["ismscompanion*"]))
     on_disk = {
         ".".join(init.relative_to(source_root).parent.parts)
         for init in PACKAGE_ROOT.rglob("__init__.py")
