@@ -1,4 +1,4 @@
-[![Security Audit](https://github.com/Manuel-Wiesner/ismscompanion/actions/workflows/push-lint-security.yml/badge.svg)](https://github.com/Manuel-Wiesner/ismscompanion/actions/workflows/push-lint-security.ymlhttps://github.com/Manuel-Wiesner/ismscompanion/actions/workflows/push-lint-security.yml)
+[![Security Audit](https://github.com/manwies/ISMSCompanion/actions/workflows/push-lint-security.yml/badge.svg)](https://github.com/manwies/ISMSCompanion/actions/workflows/push-lint-security.yml)
 
 # ISMSCompanion
 

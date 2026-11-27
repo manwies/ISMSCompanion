@@ -16,7 +16,7 @@ We take security vulnerabilities seriously. Please use one of the following meth
 
 ### Preferred: GitHub Security Advisories (Private)
 
-1. Navigate to the [Security tab](https://github.com/Manuel-Wiesner/ISMSCompanion/security/advisories)
+1. Navigate to the [Security tab](https://github.com/manwies/ISMSCompanion/security/advisories)
 2. Click "Report a vulnerability"
 3. Fill out the private advisory form
 
@@ -25,13 +25,13 @@ We take security vulnerabilities seriously. Please use one of the following meth
 For highly sensitive vulnerabilities, use PGP encryption:
 
 - Email: manuelwiesner@mailbox.org
-- PGP Key: [Download Public Key](https://github.com/Manuel-Wiesner.gpg)
+- PGP Key: [Download Public Key](https://github.com/manwies.gpg)
 - Fingerprint: 0BDA BC45 8954 3EF0 F7F7 BF2D F6EF A1E8 532F 7372
 
 To import and verify the key:
 
 ```
-curl https://github.com/Manuel-Wiesner.gpg | gpg --import
+curl https://github.com/manwies.gpg | gpg --import
 gpg --fingerprint manuelwiesner@mailbox.org
 ```
 
