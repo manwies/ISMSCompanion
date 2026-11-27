@@ -6,15 +6,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
-### Added
-
-- Smoke tests for the core security module (`crypto_config`, `exceptions`) and a version consistency test.
-- CI job running `pytest` with coverage on pull requests and pushes to `main`.
-- `pytest-cov` as development dependency.
-
 ### Changed
 
-- CI workflow runs with read-only `contents` permission, cancels superseded pull request runs and has job timeouts.
+- CI runs `pytest` with coverage on pull requests.
 - `mypy` and Bandit (medium severity and above) now fail the CI run instead of being ignored.
 
 ## [0.2.0] - 2026-11-25
