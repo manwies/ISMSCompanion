@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+## [0.2.1] - 2026-11-27
+
 ### Added
 
 - Python support policy in `docs/python-support-policy.md`.
@@ -49,3 +51,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 ### Added
 
 - Initial project setup: package structure, security policy, CI workflows for linting and security scanning, and the core security module (cryptographic configuration and exceptions).
+
+[Unreleased]: https://github.com/manwies/ISMSCompanion/compare/v0.2.1...HEAD
+[0.2.1]: https://github.com/manwies/ISMSCompanion/compare/v0.2.0...v0.2.1
+[0.2.0]: https://github.com/manwies/ISMSCompanion/compare/v0.1.0...v0.2.0
+[0.1.0]: https://github.com/manwies/ISMSCompanion/releases/tag/v0.1.0
