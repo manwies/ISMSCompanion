@@ -44,9 +44,9 @@ jobs:
         run: pip install pip-audit
       - name: Run pip-audit
         run: |
-          # CVE-2025-8869: False Positive - Python >= 3.11.4 implements PEP 706
           # Skip editable installs (local ismscompanion package)
-          pip-audit --skip-editable --ignore-vuln GHSA-4xh5-x5gv-qwph --desc
+          # Add an --ignore-vuln entry only together with a documented review date
+          pip-audit --skip-editable --desc
 
       - name: Ruff Format Check
         run: ruff format --check .
