@@ -46,6 +46,16 @@ This section documents how changes are made, so that the process is transparent.
 - **Versioning**: SemVer. The version is bumped as the last commit of a reviewed pull request. Pure documentation, test, chore and CI changes without effect on shipped behavior do not need a bump.
 - **Local setup**: `pip install -e ".[dev]"`, then enable the pre-commit hooks.
 
+### Version bump procedure
+
+The version is defined only in `pyproject.toml`. `ismscompanion.__version__` is read from the installed package metadata.
+
+1. Determine the bump level from the commits of the pull request. `MAJOR` applies to breaking changes, `MINOR` to backward-compatible features and `PATCH` to fixes, security changes, performance changes and refactorings. Documentation, test, chore and CI changes without effect on shipped behavior need no bump. The pull request states the level and the reason.
+2. Add the bump as the last commit of the reviewed pull request. The commit changes exactly two files: `pyproject.toml` (new `version`) and `CHANGELOG.md` (rename `[Unreleased]` to `[x.y.z] - YYYY-MM-DD` and add a new empty `[Unreleased]` section above it).
+3. Run `python scripts/check_version_consistency.py`. The same check runs in CI in the job "Package Build Check".
+4. Repeat `pip install -e ".[dev]"` after the change. An editable install keeps the previous version in its metadata, and `tests/test_version.py` fails until it is refreshed.
+5. Comparison links at the end of `CHANGELOG.md` are added once tags exist. Tags and releases are created only on explicit instruction of the maintainer.
+
 ### Definition of done
 
 - Lint, format and typing checks pass.
