@@ -12,9 +12,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - The dependency audit in CI runs without an ignore entry. `GHSA-4xh5-x5gv-qwph` (CVE-2025-8869) is fixed in pip 25.3.
 - `black` is removed from the `dev` extra and from the configuration. Formatting uses `ruff format`.
 
+### Fixed
+
+- The Security Audit badge in `README.md` and `README.de.md` points to the correct repository. The broken badge link in `README.de.md` is repaired.
+
 ### Security
 
 - The `dev` extra requires `pytest>=9.0.3` (CVE-2025-71176, insecure temporary directory handling in earlier versions).
+- The private vulnerability reporting link and the PGP public key links in `.github/SECURITY.md` point to the account that owns the repository.
 
 ## [0.2.1] - 2026-11-27
 
