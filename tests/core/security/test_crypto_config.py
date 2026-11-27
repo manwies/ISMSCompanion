@@ -5,7 +5,7 @@ from dataclasses import FrozenInstanceError
 
 import pytest
 
-from src.core.security.crypto_config import (
+from ismscompanion.core.security.crypto_config import (
     CryptoConfig,
     crypto_config,
     validate_config,

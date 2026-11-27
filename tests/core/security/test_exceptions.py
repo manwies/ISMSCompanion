@@ -3,7 +3,7 @@
 
 import pytest
 
-from src.core.security import exceptions
+from ismscompanion.core.security import exceptions
 
 
 @pytest.mark.parametrize("name", exceptions.__all__)

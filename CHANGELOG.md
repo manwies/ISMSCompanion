@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+## [0.2.1] - 2026-11-27
+
 ### Added
 
 - Python support policy in `docs/python-support-policy.md`.
@@ -17,6 +19,18 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - CI runs the tests on Python 3.11 to 3.14 and on 3.15 as a non-blocking experimental job. Lint, type check, dependency audit and Bandit run on Python 3.13.
 - Supported Python versions are declared as package classifiers.
 - Renovate no longer proposes Python minor or major upgrades.
+- The Python package moved to `src/ismscompanion/`. Imports use `ismscompanion.*` instead of `src.*`.
+- CI measures coverage for the `ismscompanion` package.
+
+### Removed
+
+- The `ismscompanion-web` console script. Its target module did not exist. It is reintroduced together with the backend.
+
+### Fixed
+
+- `ismscompanion.core.security` is now included in built packages (missing `__init__.py`).
+- Package discovery no longer installs a top-level `core` package.
+- Project URLs in `pyproject.toml` point to the correct repository.
 
 ## [0.2.0] - 2026-11-25
 

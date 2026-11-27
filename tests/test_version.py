@@ -4,11 +4,11 @@
 import tomllib
 from pathlib import Path
 
-import src
+import ismscompanion
 
 
 def test_package_version_matches_pyproject() -> None:
     pyproject = Path(__file__).resolve().parents[1] / "pyproject.toml"
     with pyproject.open("rb") as handle:
         data = tomllib.load(handle)
-    assert src.__version__ == data["project"]["version"]
+    assert ismscompanion.__version__ == data["project"]["version"]

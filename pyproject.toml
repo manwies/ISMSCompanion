@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "ismscompanion"
-version = "0.2.0"
+version = "0.2.1"
 description = "ISMS Security Companion"
 readme = "README.md"
 authors = [
@@ -52,18 +52,15 @@ security = [
     "safety>=3.0.0",         # Vulnerability Scanner
 ]
 
-# Vereinfachte Entry Points (nur Backend)
-[project.scripts]
-ismscompanion-web = "src.backend.main:start_server"  # Web-Server-Version
-
 # URLs
 [project.urls]
-Homepage = "https://github.com/Manuel-Wiesner/ISMSCompanion"
-Repository = "https://github.com/Manuel-Wiesner/ISMSCompanion.git"
-Issues = "https://github.com/Manuel-Wiesner/ISMSCompanion/issues"
+Homepage = "https://github.com/manwies/ISMSCompanion"
+Repository = "https://github.com/manwies/ISMSCompanion.git"
+Issues = "https://github.com/manwies/ISMSCompanion/issues"
 
 [tool.setuptools.packages.find]
 where = ["src"]
+include = ["ismscompanion*"]
 
 # Tool Configurations
 [tool.black]
@@ -93,7 +90,7 @@ skips = ["B101"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
-pythonpath = ["."]
+pythonpath = ["src"]
 python_files = ["test_*.py"]
 python_classes = ["Test*"]
 python_functions = ["test_*"]
