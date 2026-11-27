@@ -58,7 +58,7 @@ jobs:
       # mypy and ruff target the minimum supported version (see pyproject.toml)
       # so that syntax unsupported by that version is reported.
       - name: mypy Type Check
-        run: mypy src/
+        run: mypy src/ scripts/
 
   test-matrix:
     name: Tests (pytest, Python ${{ matrix.python-version }})
@@ -134,7 +134,7 @@ jobs:
 
       - name: Run Bandit Security Scan
         # Fail on medium severity and above; report is uploaded in any case
-        run: bandit -r src/ -ll -f json -o bandit-report.json
+        run: bandit -r src/ scripts/ -ll -f json -o bandit-report.json
 
       - name: Upload Bandit Report
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
@@ -156,6 +156,9 @@ jobs:
         uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
         with:
           python-version-file: ".python-version"
+
+      - name: Check version consistency
+        run: python scripts/check_version_consistency.py
 
       - name: Install build tools
         run: pip install build==1.6.1 twine==7.0.0

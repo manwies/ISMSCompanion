@@ -11,6 +11,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - CI builds the sdist and wheel, validates the metadata with `twine check --strict` and verifies the wheel contents.
 - The dependency audit in CI runs without an ignore entry. `GHSA-4xh5-x5gv-qwph` (CVE-2025-8869) is fixed in pip 25.3.
 - `black` is removed from the `dev` extra and from the configuration. Formatting uses `ruff format`.
+- The package version is defined only in `pyproject.toml`. `ismscompanion.__version__` is read from the installed package metadata, so an editable install must be repeated after a version change.
+- CI checks that the newest released `CHANGELOG.md` heading matches the version in `pyproject.toml` and that release headings are valid, dated and in descending order.
 
 ### Fixed
 
