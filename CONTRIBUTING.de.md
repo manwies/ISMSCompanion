@@ -46,6 +46,16 @@ Dieser Abschnitt dokumentiert, wie Änderungen entstehen, damit der Ablauf trans
 - **Versionierung**: SemVer. Die Version wird als letzter Commit eines geprüften Pull Requests angehoben. Reine Änderungen an Doku, Tests, Chores und CI ohne Auswirkung auf ausgeliefertes Verhalten brauchen keinen Bump.
 - **Lokales Setup**: `pip install -e ".[dev]"`, danach die Pre-commit-Hooks aktivieren.
 
+### Ablauf eines Version-Bumps
+
+Die Version ist nur in `pyproject.toml` definiert. `ismscompanion.__version__` wird aus den Metadaten des installierten Pakets gelesen.
+
+1. Das Bump-Level wird aus den Commits des Pull Requests bestimmt. `MAJOR` gilt für Breaking Changes, `MINOR` für abwärtskompatible Features und `PATCH` für Fixes, Security-Änderungen, Performance-Änderungen und Refactorings. Änderungen an Doku, Tests, Chores und CI ohne Auswirkung auf ausgeliefertes Verhalten brauchen keinen Bump. Der Pull Request nennt das Level und die Begründung.
+2. Der Bump wird als letzter Commit des geprüften Pull Requests hinzugefügt. Der Commit ändert genau zwei Dateien: `pyproject.toml` (neue `version`) und `CHANGELOG.md` (`[Unreleased]` in `[x.y.z] - YYYY-MM-DD` umbenennen und darüber einen neuen, leeren Abschnitt `[Unreleased]` anlegen).
+3. Danach wird `python scripts/check_version_consistency.py` ausgeführt. Dieselbe Prüfung läuft in CI im Job "Package Build Check".
+4. Nach der Änderung wird `pip install -e ".[dev]"` wiederholt. Ein Editable-Install behält die vorherige Version in seinen Metadaten, und `tests/test_version.py` schlägt fehl, bis er aktualisiert ist.
+5. Vergleichslinks am Ende von `CHANGELOG.md` werden ergänzt, sobald Tags existieren. Tags und Releases werden nur auf ausdrückliche Anweisung des Maintainers angelegt.
+
 ### Definition of Done
 
 - Lint-, Format- und Typing-Prüfungen laufen sauber.
