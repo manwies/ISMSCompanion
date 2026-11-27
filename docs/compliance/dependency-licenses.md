@@ -30,7 +30,7 @@ MIT and BSD-3-Clause are permissive licenses that can be included in a work lice
 
 ## Development and Security Tools
 
-pytest, black, ruff, mypy, bandit and safety are used for development and CI only and are not distributed with the application. They are not part of this review.
+pytest, pytest-cov, ruff, mypy, bandit, safety, pip-audit, build and twine are used for development and CI only and are not distributed with the application. They are not part of this review.
 
 ## Method and Update Policy
 

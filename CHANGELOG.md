@@ -6,6 +6,16 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+### Changed
+
+- CI builds the sdist and wheel, validates the metadata with `twine check --strict` and verifies the wheel contents.
+- The dependency audit in CI runs without an ignore entry. `GHSA-4xh5-x5gv-qwph` (CVE-2025-8869) is fixed in pip 25.3.
+- `black` is removed from the `dev` extra and from the configuration. Formatting uses `ruff format`.
+
+### Security
+
+- The `dev` extra requires `pytest>=9.0.3` (CVE-2025-71176, insecure temporary directory handling in earlier versions).
+
 ## [0.2.1] - 2026-11-27
 
 ### Added
