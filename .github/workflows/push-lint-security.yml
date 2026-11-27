@@ -28,7 +28,7 @@ jobs:
       - name: Setup Python 3.11
         uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
         with:
-          python-version: "~3.11.4"
+          python-version: "~3.15.0"
           cache: "pip"
 
       - name: Upgrade pip/setuptools/wheel
@@ -67,7 +67,7 @@ jobs:
       - name: Setup Python 3.11
         uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
         with:
-          python-version: "~3.11.4"
+          python-version: "~3.15.0"
           cache: "pip"
 
       - name: Upgrade pip/setuptools/wheel
@@ -92,7 +92,7 @@ jobs:
       - name: Setup Python 3.11
         uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
         with:
-          python-version: "3.11"
+          python-version: "3.15"
 
       - name: Upgrade pip/setuptools/wheel
         run: pip install --upgrade pip setuptools
