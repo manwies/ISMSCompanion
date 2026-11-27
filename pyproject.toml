@@ -33,6 +33,7 @@ build = [
 # Development Tools
 dev = [
     "pytest>=8.0.0",         # Tests
+    "pytest-cov>=7.1.0",     # Coverage reporting (MIT)
     "black>=24.0.0",         # Code Formatting
     "ruff>=0.6.0",           # Linting
     "mypy>=1.10.0",          # Type Checking
@@ -69,6 +70,10 @@ target-version = "py311"
 [tool.ruff.lint]
 select = ["E", "F", "W", "C", "N", "B", "S"]
 
+[tool.ruff.lint.per-file-ignores]
+# Allow assert statements in tests (pytest idiom)
+"tests/*" = ["S101"]
+
 [tool.mypy]
 python_version = "3.11"
 warn_return_any = true
@@ -81,6 +86,7 @@ skips = ["B101"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+pythonpath = ["."]
 python_files = ["test_*.py"]
 python_classes = ["Test*"]
 python_functions = ["test_*"]
