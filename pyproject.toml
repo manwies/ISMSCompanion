@@ -39,7 +39,7 @@ build = [
 
 # Development Tools
 dev = [
-    "pytest>=8.0.0",         # Tests
+    "pytest>=9.0.3",         # Tests (CVE-2025-71176 fixed in 9.0.3)
     "pytest-cov>=7.1.0",     # Coverage reporting (MIT)
     "black>=24.0.0",         # Code Formatting
     "ruff>=0.6.0",           # Linting
