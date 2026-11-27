@@ -7,6 +7,12 @@
   "prConcurrentLimit": 3,
   "packageRules": [
     {
+      "description": "Python minor and major upgrades follow docs/python-support-policy.md",
+      "matchDepNames": ["python"],
+      "matchUpdateTypes": ["major", "minor"],
+      "enabled": false
+    },
+    {
       "description": "Security-critical Dependencies",
       "matchPackageNames": [
         "cryptography",
