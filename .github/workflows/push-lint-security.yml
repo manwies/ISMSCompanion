@@ -3,7 +3,8 @@ name: Security & Lint Check
 # Runs on pull requests only. Branch protection on main must require these
 # checks and an up-to-date branch, so the PR run covers the merge result.
 # Required status checks: "Format & Lint Check", "Tests (pytest)",
-# "Security Scan (Bandit)". "Tests (pytest)" is the aggregate gate job.
+# "Security Scan (Bandit)", "Package Build Check". "Tests (pytest)" is the
+# aggregate gate job.
 on:
   pull_request:
     branches: [main]
@@ -44,9 +45,9 @@ jobs:
         run: pip install pip-audit
       - name: Run pip-audit
         run: |
-          # CVE-2025-8869: False Positive - Python >= 3.11.4 implements PEP 706
           # Skip editable installs (local ismscompanion package)
-          pip-audit --skip-editable --ignore-vuln GHSA-4xh5-x5gv-qwph --desc
+          # Add an --ignore-vuln entry only together with a documented review date
+          pip-audit --skip-editable --desc
 
       - name: Ruff Format Check
         run: ruff format --check .
@@ -141,3 +142,56 @@ jobs:
         with:
           name: bandit-security-report
           path: bandit-report.json
+
+  package-build:
+    name: Package Build Check
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+
+      - name: Setup Python (primary version)
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version-file: ".python-version"
+
+      - name: Install build tools
+        run: pip install build==1.6.1 twine==7.0.0
+
+      - name: Build sdist and wheel
+        run: python -m build
+
+      - name: Check package metadata
+        run: twine check --strict dist/*
+
+      - name: Verify wheel contents
+        run: |
+          python - <<'PY'
+          import sys
+          import zipfile
+          from pathlib import Path
+
+          wheel = next(Path("dist").glob("*.whl"))
+          with zipfile.ZipFile(wheel) as archive:
+              names = set(archive.namelist())
+
+          required = {
+              "ismscompanion/__init__.py",
+              "ismscompanion/core/__init__.py",
+              "ismscompanion/core/security/__init__.py",
+              "ismscompanion/core/security/crypto_config.py",
+              "ismscompanion/core/security/exceptions.py",
+          }
+          top_level = {name.split("/", 1)[0] for name in names}
+          unexpected = sorted(
+              entry
+              for entry in top_level
+              if entry != "ismscompanion" and not entry.endswith(".dist-info")
+          )
+          missing = sorted(required - names)
+          if missing or unexpected:
+              sys.exit(f"Wheel check failed: missing={missing} unexpected={unexpected}")
+          print(f"Wheel check passed: {wheel.name}")
+          PY
