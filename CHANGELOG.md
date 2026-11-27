@@ -51,6 +51,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ### Added
 
+- Initial project setup: package structure, security policy, CI workflows for linting and security scanning, and the core security module (cryptographic configuration and exceptions).
 - Dependency license review in `docs/compliance/dependency-licenses.md`, including versions, sources, method and update policy.
 
 ### Changed
@@ -60,9 +61,3 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - Set `license = "AGPL-3.0-only"` in `pyproject.toml`.
 - Added SPDX license identifiers to all existing Python source files.
 - Updated the license sections in `README.md` and `README.de.md`, including the network use obligation (AGPL-3.0 section 13).
-
-## [0.1.0] - Unreleased
-
-### Added
-
-- Initial project setup: package structure, security policy, CI workflows for linting and security scanning, and the core security module (cryptographic configuration and exceptions).
