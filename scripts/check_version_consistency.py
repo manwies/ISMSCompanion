@@ -45,7 +45,9 @@ def _check_released(released: list[tuple[str, str | None]]) -> list[str]:
     for name, day in released:
         match = SEMVER.fullmatch(name)
         if match:
-            cores.append((int(match["major"]), int(match["minor"]), int(match["patch"])))
+            cores.append(
+                (int(match["major"]), int(match["minor"]), int(match["patch"]))
+            )
         else:
             errors.append(f"Heading '{name}' is not a valid semantic version.")
         if day is None or not _is_iso_date(day):
